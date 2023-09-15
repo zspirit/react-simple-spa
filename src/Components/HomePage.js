@@ -29,7 +29,7 @@ function HomePage() {
         setTitle(response.data.title)
         setArtistShort(response.data.artistShort)
         setPrince(response.data.price)
-        setOtherArtworkImages(response.data.otherArtworkImages)
+        setOtherArtworkImages(response.data?.otherArtworkImages)
         setMaterials(response.data.materials)
         setStyles(response.data.styles)
         setSubjects(response.data.subjects)

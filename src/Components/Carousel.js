@@ -4,18 +4,18 @@ import ReactSimplyCarousel from 'react-simply-carousel';
 function Carousel(props) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   console.log(props.otherArtworkImages);
-  
-  const otherArtworkImages = props.otherArtworkImages
-  const getOtherArtworkImages = otherArtworkImages => {
+  if (!props.otherArtworkImages) return null;
+  const otherArtworkImages = props?.otherArtworkImages
+  const getOtherArtworkImages = () => {
     console.log(otherArtworkImages)
     let content = [];
     for (let item of otherArtworkImages) {
-        content.push(<div style={{ width: 300, height: 300, background: '#F6F8FA' }}>
-            <img src={`${item}`} style={{padding:10}}/>
-        </div>);
-    }
+      content.push(<div style={{ width: 300, height: 300, background: '#F6F8FA' }}>
+          <img src={`${item}`} style={{padding:10}}/>
+      </div>);
+  }
     return content;
-    };
+  };
 
   return (
     <div className='carouselBox'>
